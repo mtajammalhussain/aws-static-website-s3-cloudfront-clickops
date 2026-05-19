@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume website for Muhammad Tajammal Hussain, aspiring Cloud and DevOps Engineer with automotive electronics validation background.">
+  <title>Muhammad Tajammal Hussain | Cloud & DevOps Engineer</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6778;
+      --accent: #173b57;
+      --accent-2: #2563eb;
+      --accent-soft: #e8f1ff;
+      --line: #d9e2ec;
+      --chip: #eef3f8;
+      --shadow: 0 20px 48px rgba(31, 41, 55, 0.10);
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: linear-gradient(180deg, #eaf2fb 0, var(--bg) 340px), var(--bg);
+      font-family: Inter, Roboto, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .page {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 32px;
+    }
+
+    .resume {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: end;
+      padding: 48px;
+      color: #ffffff;
+      background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.45), transparent 36%), linear-gradient(135deg, #111827 0%, #173b57 58%, #245b7c 100%);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #bfdbfe;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { margin: 0; line-height: 1.2; }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(2.15rem, 4.8vw, 4rem);
+      font-weight: 850;
+      letter-spacing: -0.04em;
+    }
+
+    .title {
+      margin: 12px 0 0;
+      color: #e5eef8;
+      font-size: clamp(1.04rem, 2vw, 1.35rem);
+      font-weight: 550;
+    }
+
+    .hero-note {
+      max-width: 780px;
+      margin: 14px 0 0;
+      color: #dce8f5;
+      font-size: 1rem;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 8px 13px;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      font-size: 0.93rem;
+      font-weight: 700;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 42px;
+      padding: 44px 48px 38px;
+    }
+
+    main, aside { min-width: 0; }
+
+    section + section { margin-top: 34px; }
+
+    .section-title {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-title::after {
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+      content: "";
+    }
+
+    p { margin: 0; }
+    p + p { margin-top: 12px; }
+
+    .summary {
+      color: #344456;
+      font-size: 1.05rem;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .card + .card { margin-top: 16px; }
+
+    .card h3 {
+      color: #111827;
+      font-size: 1.18rem;
+      letter-spacing: -0.01em;
+    }
+
+    .meta {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    ul { margin: 13px 0 0; padding-left: 1.18rem; }
+    li + li { margin-top: 7px; }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .highlight {
+      padding: 14px;
+      border: 1px solid #bfd7f5;
+      border-radius: 12px;
+      background: #f5f9ff;
+    }
+
+    .highlight strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.96rem;
+    }
+
+    .highlight span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .skills-grid { display: grid; gap: 16px; }
+
+    .skill-group {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .skill-group:last-child { padding-bottom: 0; border-bottom: 0; }
+
+    .skill-group h3 {
+      margin-bottom: 9px;
+      color: #28394c;
+      font-size: 1rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      padding: 6px 10px;
+      color: #23364a;
+      border-radius: 999px;
+      background: var(--chip);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .certification {
+      padding: 17px;
+      border: 1px solid #bfd7f5;
+      border-radius: var(--radius);
+      background: #f5f9ff;
+    }
+
+    .certification + .certification { margin-top: 12px; }
+
+    .certification h3 {
+      color: #183b63;
+      font-size: 0.99rem;
+    }
+
+    .certification p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 3px 8px;
+      color: #174c7c;
+      border-radius: 999px;
+      background: #dbeafe;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 16px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 48px;
+      color: #dce8f5;
+      background: #111827;
+      font-size: 0.94rem;
+    }
+
+    .counter-text { font-weight: 800; white-space: nowrap; }
+
+    @media (max-width: 900px) {
+      .page { width: min(100% - 24px, 760px); padding-top: 24px; }
+      .hero, .content { grid-template-columns: 1fr; padding: 34px 28px; }
+      .contact-list { justify-content: flex-start; }
+      .highlight-grid { grid-template-columns: 1fr; }
+      .footer { padding: 22px 28px; }
+    }
+
+    @media (max-width: 560px) {
+      body { font-size: 15px; }
+      .page { width: 100%; padding: 0; }
+      .resume { border-right: 0; border-left: 0; border-radius: 0; box-shadow: none; }
+      .hero, .content { padding: 28px 20px; }
+      .contact-list { display: grid; grid-template-columns: 1fr; }
+      .contact-list a { justify-content: center; width: 100%; }
+      .card, .certification { padding: 18px; }
+      .footer { flex-direction: column; padding: 22px 20px; }
+      .counter-text { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <article class="resume" aria-label="Resume">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Cloud Resume</p>
+          <h1>Muhammad Tajammal Hussain</h1>
+          <p class="title">Aspiring Cloud &amp; DevOps Engineer | Automotive Electronics Validation Background</p>
+          <p class="hero-note">Senior automotive electronics engineer transitioning into Cloud and DevOps through AWS certification study, Linux, Docker, and hands-on AWS projects.</p>
+        </div>
+
+        <nav aria-label="Professional links">
+          <ul class="contact-list">
+            <li><a href="https://github.com/mtajammalhussain/" target="_blank" rel="noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/muhammadtajammal/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a href="mailto:hussain.muhtaj@gmail.com">Email</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="content">
+        <main>
+          <section aria-labelledby="summary-heading">
+            <h2 class="section-title" id="summary-heading">Professional Summary</h2>
+            <p class="summary">Aspiring Cloud &amp; DevOps Engineer with more than eight years of experience in automotive ECU hardware validation, requirements analysis, technical documentation, and cross-functional issue coordination. Currently building practical AWS knowledge through the Cloud Resume Challenge, AWS Solutions Architect Associate exam preparation, and hands-on ClickOps deployment to understand cloud networking, security, storage, and serverless architecture deeply. Strong engineering mindset with proven experience in structured troubleshooting, test planning, customer requirement analysis, and reliable technical execution.</p>
+            <div class="highlight-grid" aria-label="Profile highlights">
+              <div class="highlight"><strong>AWS Learning Path</strong><span>SAA preparation, Cloud Resume Challenge, S3, Route 53, CloudFront, API Gateway, Lambda</span></div>
+              <div class="highlight"><strong>DevOps Foundations</strong><span>Linux command line, Docker, Git, CI/CD concepts, automation mindset</span></div>
+              <div class="highlight"><strong>Engineering Strength</strong><span>ECU validation, DOORS, CANoe/CANape, DV/PV testing, customer interface</span></div>
+            </div>
+          </section>
+
+          <section aria-labelledby="projects-heading">
+            <h2 class="section-title" id="projects-heading">Projects</h2>
+            <article class="card">
+              <h3>The Cloud Resume Challenge</h3>
+              <p class="meta">In progress · AWS ClickOps learning track · S3, CloudFront, Route 53, API Gateway, Lambda, DynamoDB</p>
+              <ul>
+                <li>Building a responsive static resume website as a single HTML file for simple deployment to an Amazon S3 static website bucket.</li>
+                <li>Learning the architecture step by step, including DNS with Route 53, HTTPS delivery through CloudFront, and secure separation of public frontend and backend services.</li>
+                <li>Preparing a serverless visitor-counter backend with API Gateway, AWS Lambda, and DynamoDB.</li>
+                <li>Using the manual AWS Console approach first to understand the “why” behind networking, permissions, storage, caching, and security before automating later.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section aria-labelledby="experience-heading">
+            <h2 class="section-title" id="experience-heading">Experience</h2>
+            <div class="timeline">
+              <article class="card">
+                <h3>Electronic Design Engineer – Brake Control ECUs</h3>
+                <p class="meta">ZF Active Safety GmbH · Jun 2018 – Feb 2026 · Koblenz, Germany</p>
+                <ul>
+                  <li>Reviewed, analyzed, and evaluated customer requirements and technical specifications for automotive ECU validation.</li>
+                  <li>Created and linked design and test specifications in DOORS, supporting traceability between requirements and validation activities.</li>
+                  <li>Defined and supported DV/PV activities, test definition, and hardware/software commissioning for brake control ECU projects.</li>
+                  <li>Investigated DV/PV anomalies and ECU analysis topics, supported customer measurement appointments including vehicle EMC measurements, and prepared ECU release reports.</li>
+                  <li>Acted as a technical interface to customers and internal/external teams with strong focus on precise documentation and reliable engineering execution.</li>
+                </ul>
+              </article>
+
+              <article class="card">
+                <h3>Development Engineer – Innovation &amp; Embedded Prototypes</h3>
+                <p class="meta">Kautex Textron GmbH &amp; Co. KG · Oct 2017 – Mar 2018 · Bonn, Germany</p>
+                <ul>
+                  <li>Designed, set up, and executed laboratory trials in an automotive supplier environment.</li>
+                  <li>Processed and analyzed measurement data to support technical decision-making.</li>
+                  <li>Implemented and tested embedded software prototypes and supported concept design for electronically controlled systems.</li>
+                  <li>Assessed patent specifications and contributed to structured innovation and research activities.</li>
+                </ul>
+              </article>
+
+              <article class="card">
+                <h3>Electronics Engineer – Hardware Development Project</h3>
+                <p class="meta">Weber GmbH / Bosch project · Aug 2016 – Aug 2017 · Germany</p>
+                <ul>
+                  <li>Supported development of a transmission control unit for an automotive end customer.</li>
+                  <li>Worked on requirements management, hardware design description, requirements and test specifications, and DOORS documentation.</li>
+                  <li>Performed calculations in Mathcad and Excel, created MOSFET thermal models in LTspice, and contributed to worst-case and impact analysis according to ISO 26262.</li>
+                  <li>At Bosch project level, linked requirements in DOORS, created circuit descriptions and WCA documentation, and supported technical reviews and simulation tasks.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+        </main>
+
+        <aside aria-label="Certifications, skills and education">
+          <section aria-labelledby="certifications-heading">
+            <h2 class="section-title" id="certifications-heading">Certifications</h2>
+            <div class="certification">
+              <h3>AWS Certified Solutions Architect – Associate</h3>
+              <p>Currently preparing for the SAA exam with focus on resilient architecture, networking, storage, IAM, security, and cost-aware design.</p>
+              <span class="status">In progress</span>
+            </div>
+            <div class="certification">
+              <h3>AWS Cloud Practitioner CLF-C02 – KodeKloud Course Completion</h3>
+              <p>Issued May 2026. Foundation in AWS core services, cloud concepts, billing, security, and shared responsibility.</p>
+            </div>
+            <div class="certification">
+              <h3>Docker Foundations Professional Certificate</h3>
+              <p>Issued Jan 2026. Docker basics, containers, images, volumes, networking, and Docker Compose.</p>
+            </div>
+            <div class="certification">
+              <h3>Learning Linux Command Line</h3>
+              <p>Issued Feb 2026. Bash usage, file system navigation, permissions, text processing, and package-management fundamentals.</p>
+            </div>
+          </section>
+
+          <section aria-labelledby="skills-heading">
+            <h2 class="section-title" id="skills-heading">Technical Skills</h2>
+            <div class="skills-grid">
+              <div class="skill-group">
+                <h3>Cloud Platforms</h3>
+                <ul class="tag-list">
+                  <li>AWS</li><li>S3</li><li>IAM</li><li>EC2</li><li>VPC</li><li>Route 53</li><li>CloudFront</li><li>API Gateway</li><li>Lambda</li><li>DynamoDB</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>DevOps &amp; Containers</h3>
+                <ul class="tag-list">
+                  <li>Docker</li><li>Containers</li><li>Docker Compose</li><li>Git</li><li>CI/CD Concepts</li><li>GitHub Actions</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Scripting &amp; SysAdmin</h3>
+                <ul class="tag-list">
+                  <li>Linux</li><li>Bash</li><li>Python basics</li><li>PowerShell</li><li>Networking basics</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Automotive Engineering</h3>
+                <ul class="tag-list">
+                  <li>ECU Validation</li><li>DV/PV Testing</li><li>EMC Support</li><li>DOORS</li><li>CANoe</li><li>CANape</li><li>Mathcad</li><li>LTspice</li><li>ISO 26262</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="education-heading">
+            <h2 class="section-title" id="education-heading">Education</h2>
+            <div class="certification">
+              <h3>M.Sc. Power Engineering</h3>
+              <p>Brandenburg University of Technology Cottbus-Senftenberg, Germany</p>
+            </div>
+            <div class="certification">
+              <h3>B.Sc. Electrical Engineering</h3>
+              <p>University of Engineering and Technology Lahore, Pakistan</p>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2026 Muhammad Tajammal Hussain. All rights reserved.</p>
+        <p class="counter-text">Website Views: <span id="counter">Loading...</span></p>
+      </footer>
+    </article>
+  </div>
+
+  <script>
+    const counter = document.getElementById("counter");
+    counter.textContent = "Loading...";
+
+    // Future AWS API Gateway visitor-count fetch goes here:
+    // Replace the URL below with your real API Gateway endpoint when the backend is ready.
+    // fetch("https://YOUR_API_GATEWAY_URL/visitor-count")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     counter.textContent = data.count;
+    //   })
+    //   .catch(() => {
+    //     counter.textContent = "Unavailable";
+    //   });
+  </script>
+</body>
+</html>
